@@ -24,7 +24,12 @@ const CsrPage = () => {
       <h1 className="text-8xl">CSR</h1>
       {data.map((cat) => (
         <div key={cat.id}>
-          <img src={cat.url} width={cat.width} height={cat.height} />
+          <img
+            src={cat.url}
+            alt={cat.id}
+            width={cat.width}
+            height={cat.height}
+          />
         </div>
       ))}
     </div>

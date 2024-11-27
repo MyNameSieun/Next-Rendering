@@ -14,7 +14,12 @@ const SsgPage = async () => {
       <h1 className="text-8xl">SSG</h1>
       {data.map((cat: CatType) => (
         <div key={cat.id}>
-          <img src={cat.url} width={cat.width} height={cat.height} />
+          <img
+            src={cat.url}
+            alt={cat.id}
+            width={cat.width}
+            height={cat.height}
+          />
         </div>
       ))}
     </div>
