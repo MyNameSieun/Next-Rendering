@@ -1,6 +1,7 @@
+// RootLayout.tsx
 import type { Metadata } from "next";
-import "./globals.css";
 import Link from "next/link";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="p-52">
-        <Link href="/" className="text-3xl">
+      <body className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+        <Link
+          href="/"
+          className="text-3xl font-semibold text-blue-600 hover:text-blue-800 mb-8"
+        >
           홈으로
         </Link>
-        {children}
+        <div className="w-full max-w-screen-sm bg-white p-8 rounded-lg shadow-lg">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 
 const CsrPage = () => {
   const [data, setData] = useState<CatType[] | null>(null);
-  const CAT_API_Key =
-    "live_VodbROy8Y4cD3I3WSezY2DLfrFty3IDJBv9gPOvT9ZZql4hYCnRmEYraPCYrJEVG";
-  const url = `https://api.thecatapi.com/v1/images/search?limit=3&breed_ids=beng&api_key=${CAT_API_Key}`;
+  const url = `https://api.thecatapi.com/v1/images/search?limit=3&breed_ids=beng&api_key=${process.env.NEXT_PUBLIC_API_KEY}`;
 
   useEffect(() => {
     fetch(url)
@@ -24,12 +22,7 @@ const CsrPage = () => {
       <h1 className="text-8xl">CSR</h1>
       {data.map((cat) => (
         <div key={cat.id}>
-          <img
-            src={cat.url}
-            alt={cat.id}
-            width={cat.width}
-            height={cat.height}
-          />
+          <img src={cat.url} alt={cat.id} width={300} />
         </div>
       ))}
     </div>

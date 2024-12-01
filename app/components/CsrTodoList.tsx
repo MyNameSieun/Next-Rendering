@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Todo } from "../types/todo-types";
 
-const TodoList = () => {
+const CsrTodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -67,4 +67,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default CsrTodoList;
